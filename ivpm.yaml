@@ -12,6 +12,8 @@ package:
       url: http://github.com/dv-flow/dv-flow-mgr.git
     - name: pytest-dfm
       url: http://github.com/dv-flow/pytest-dfm.git
+    - name: setuptools-scm
+      src: pypi
     - name: ply 
       src: pypi
     - name: pydantic
