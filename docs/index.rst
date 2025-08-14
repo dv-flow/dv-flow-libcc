@@ -2,9 +2,10 @@
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
-###############
+
+#############
 DV Flow LibCC
-###############
+#############
 
 LibCC is a DV-Flow library that provides tasks for building C/C++ shared libraries and executables.
 The library defines a set of tasks for compiling C/C++ sources and object files into shared libraries or executables.
@@ -46,3 +47,4 @@ Parameters
 
 .. note::
     This package is intended for use with DV-Flow and provides reusable build tasks for C/C++ projects.
+
