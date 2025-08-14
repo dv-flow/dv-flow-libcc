@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>DV Flow LibCC &#8212; DV Flow LibCC  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="dv-flow-libcc">
+<h1><a class="toc-backref" href="#id3" role="doc-backlink">DV Flow LibCC</a><a class="headerlink" href="#dv-flow-libcc" title="Link to this heading">¶</a></h1>
+<p>LibCC is a DV-Flow library that provides tasks for building C/C++ shared libraries and executables.
+The library defines a set of tasks for compiling C/C++ sources and object files into shared libraries or executables.</p>
+<nav class="contents" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#dv-flow-libcc" id="id3">DV Flow LibCC</a></p>
+<ul>
+<li><p><a class="reference internal" href="#task-sharedlib" id="id4">Task: SharedLib</a></p></li>
+<li><p><a class="reference internal" href="#task-exe" id="id5">Task: Exe</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="task-sharedlib">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Task: SharedLib</a><a class="headerlink" href="#task-sharedlib" title="Link to this heading">¶</a></h2>
+<p>Builds a shared library from C/C++ sources and object files.</p>
+<section id="consumes">
+<h3>Consumes<a class="headerlink" href="#consumes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>cSource</p></li>
+<li><p>cppSource</p></li>
+<li><p>objFile</p></li>
+</ul>
+</section>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>cc</strong> - [Optional, default: gcc] C compiler to use</p></li>
+<li><p><strong>cxx</strong> - [Optional, default: g++] C++ compiler to use</p></li>
+<li><p><strong>libname</strong> - [Optional] Basename of the shared library</p></li>
+</ul>
+</section>
+</section>
+<section id="task-exe">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Task: Exe</a><a class="headerlink" href="#task-exe" title="Link to this heading">¶</a></h2>
+<p>Builds an executable from C/C++ sources and object files.</p>
+<section id="id1">
+<h3>Consumes<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>cSource</p></li>
+<li><p>cppSource</p></li>
+<li><p>objFile</p></li>
+</ul>
+</section>
+<section id="id2">
+<h3>Parameters<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>cc</strong> - [Optional, default: gcc] C compiler to use</p></li>
+<li><p><strong>cxx</strong> - [Optional, default: g++] C++ compiler to use</p></li>
+<li><p><strong>libname</strong> - [Optional] Basename of the executable</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This package is intended for use with DV-Flow and provides reusable build tasks for C/C++ projects.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">DV Flow LibCC</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Matthew Ballance.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
