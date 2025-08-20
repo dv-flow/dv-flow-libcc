@@ -79,8 +79,6 @@ async def Object(runner, input):
     cmd.extend(src_files)
     cmd.extend(obj_files)
 
-    print("cmd: %s" % cmd, flush=True)
-
     # Ensure rundir exists
     os.makedirs(os.path.dirname(out_obj), exist_ok=True)
 
