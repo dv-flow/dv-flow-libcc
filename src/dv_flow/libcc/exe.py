@@ -11,7 +11,7 @@ async def Exe(runner, input):
     """
     cc = getattr(input.params, "cc", "gcc")
     cxx = getattr(input.params, "cxx", "g++")
-    exename = getattr(input.params, "libname")  # flow.dv uses 'libname'
+    exename = getattr(input.params, "exename")
     rundir = input.rundir
 
     src_files_c = []
@@ -34,10 +34,7 @@ async def Exe(runner, input):
             defines.add(define)
 
         for f in files:
-            if not os.path.isabs(basedir):
-                abs_basedir = os.path.abspath(os.path.join(rundir, "..", basedir))
-            else:
-                abs_basedir = basedir
+            abs_basedir = basedir
             full_path = os.path.abspath(os.path.join(abs_basedir, f))
             if filetype == "cSource":
                 src_files_c.append(full_path)
@@ -83,9 +80,12 @@ async def Exe(runner, input):
             _log.error(f"Failed to compile {obj}: {e}")
             raise
 
+    if exename == "":
+        exename = "a.out"
+
     # Link all object files into the executable
     compiler = cxx if has_cpp else cc
-    out_exe = os.path.abspath(os.path.join(rundir, "..", exename))
+    out_exe = os.path.abspath(os.path.join(rundir, exename))
     link_cmd = [compiler, "-o", out_exe]
     link_cmd.extend(all_obj_files)
     _log.debug(f"Linking executable: {' '.join(shlex.quote(x) for x in link_cmd)}")

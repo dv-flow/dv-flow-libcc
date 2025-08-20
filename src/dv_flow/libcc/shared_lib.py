@@ -39,10 +39,7 @@ async def SharedLib(runner, input):
         # Classify files
         for f in files:
             # If basedir is not absolute, make it relative to rundir's parent
-            if not os.path.isabs(basedir):
-                abs_basedir = os.path.abspath(os.path.join(rundir, "..", basedir))
-            else:
-                abs_basedir = basedir
+            abs_basedir = basedir
             full_path = os.path.abspath(os.path.join(abs_basedir, f))
             if filetype == "cSource":
                 src_files.append(full_path)
@@ -57,7 +54,7 @@ async def SharedLib(runner, input):
 
     # Build output path
     # Place output in the parent of rundir (the test's tmp_path)
-    out_lib = os.path.abspath(os.path.join(rundir, "..", f"lib{libname}.so"))
+    out_lib = os.path.abspath(os.path.join(rundir, f"lib{libname}.so"))
 
     # Build command
     cmd = [compiler, "-shared", "-o", out_lib]

@@ -22,6 +22,27 @@ package:
         type: str 
         desc: Basename of the shared library
 
+  - name: Object
+    desc: Builds a relinkable object (.o) file
+    consumes:
+    - filetype: cSource
+    - filetype: cppSource
+    shell: pytask
+    run: dv_flow.libcc.object.Object
+    with:
+      cc:
+        type: str
+        value: gcc
+      cxx:
+        type: str
+        value: g++
+      objname: 
+        type: str 
+        desc: Basename of the object file (defaults to <src>.o)
+      filename:
+        type: str
+        desc: Path of single source file to compile
+
   - name: Exe
     desc: Builds an executable
     consumes:
@@ -37,6 +58,6 @@ package:
       cxx:
         type: str
         value: g++
-      libname: 
+      exename: 
         type: str 
         desc: Basename of the executable
